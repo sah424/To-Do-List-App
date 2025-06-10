@@ -5,14 +5,15 @@ import java.awt.*;
 
 public class Task extends JPanel {
 
-    //This are the type of variable I need in the project
+    //These are the type of variable I need in the project
     //FE here I need index value like 1,2,3
     private JLabel index;
 
-    //Here I need a Task Name(String) like "i will read 5 pages of Atomic Habit"
+    //Here I need a Task Name(String) like "I will read 5 pages of Atomic Habit"
+    //JTextField is used to write what a task is
     private JTextField taskName;
 
-    //Here I also need a done button after complitation
+    //Here I also need a done button after completion
     private JButton done;
 
     private boolean checked;
@@ -27,10 +28,12 @@ public class Task extends JPanel {
         checked = false;
 
         index = new JLabel("");
+        //Box sizing
         index.setPreferredSize(new Dimension(20,20));
         index.setHorizontalAlignment(JLabel.CENTER);
         this.add(index,BorderLayout.WEST);
 
+        //Task default message
         taskName = new JTextField("Your Task Here");
         taskName.setBorder(BorderFactory.createEmptyBorder());
         taskName.setBackground(Color.orange);
@@ -67,6 +70,7 @@ public class Task extends JPanel {
     }
     //This is for when I pressed the done button it will turn Green
     public JButton getDone(){
+
         return done;
     }
     //**
@@ -75,6 +79,8 @@ public class Task extends JPanel {
         this.revalidate();
     }
 
+    //Change shape function in the task
+    //Done & Check Button
     public void changeState() {
         if (checked) {
             this.setBackground(new Color(255, 255, 153)); // yellow for unfinished

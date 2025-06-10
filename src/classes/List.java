@@ -5,7 +5,9 @@ import java.awt.*;
 
 public class List extends JPanel{
      List(){
+         //To get rows & columns
          GridLayout layout = new GridLayout(10,1);
+         //For VerticalGap
          layout.setVgap(5);
 
          this.setLayout(layout);
